@@ -10,7 +10,6 @@ const ItemCtrl = (function(){
         this.name = name; 
         this.calories = calories; 
 
-
         // Data Structure / State
         const data = {
             items: [
@@ -24,6 +23,10 @@ const ItemCtrl = (function(){
 
         // Public Methods
         return {
+            getItems: function(){
+                return data.items;                 
+            }, 
+
             logData: function(){
                 return data; 
             }
@@ -40,7 +43,7 @@ const UICtrl = (function(){
 // App controller 
 const App = (function(ItemCtrl, UICtrl){
 
-    // Public Methods
+    // Public Method
     return{
         AppInit: function(){
             console.log('App init!'); 
@@ -48,7 +51,3 @@ const App = (function(ItemCtrl, UICtrl){
     }
 
 })(ItemCtrl, UICtrl); 
-
-
-// App init
-App.AppInit(); 
